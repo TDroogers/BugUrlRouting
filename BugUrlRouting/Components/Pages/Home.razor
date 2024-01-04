@@ -1,0 +1,25 @@
+﻿@page "/"
+@using System.Web
+@inject NavigationManager Navigation
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button onclick="@ClickBug">Click for bug</button>
+<button onclick="@ClickNormal">Click for normalText</button>
+
+@code{
+    private void ClickBug()
+    {
+        var returnUrl = HttpUtility.UrlEncode("https://localhost:5001/authentication/login-callback");
+        Navigation.NavigateTo($"/counter/{returnUrl}");
+    }
+
+    private void ClickNormal()
+    {
+        Navigation.NavigateTo($"/counter/text");
+    }
+}
