@@ -14,7 +14,7 @@ Welcome to your new app.
 @code{
     private void ClickBug()
     {
-        var returnUrl = HttpUtility.UrlEncode("https://localhost:5001/authentication/login-callback");
+        var returnUrl = HttpUtility.UrlEncode("BeforeEncodedSlash/AfterEncodedSlash");
         Navigation.NavigateTo($"/counter/{returnUrl}");
     }
 
